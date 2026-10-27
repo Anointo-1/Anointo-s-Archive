@@ -1,0 +1,63 @@
+<!doctype html>
+ <html lang="en">
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   <title>Anointo's Archive</title>
+   <style>
+   </style>
+  </head>
+  <body>
+  <h1>Anointo's Archive</h1>
+  <input type="text" placeholder="why did I add this?"><button>not added yet :)</button>
+  <h4 id="errorMsg" style="color: red"></h4>
+  <h2>Geometry Dash</h2>
+  <span>The best game ever.</span>
+  <br><button onclick="downAll()">download all</button>
+  
+  <hr>
+  
+  <h3>Geometry Dash 2.209 APK (android)</h3>
+  <span>The APK for the current GD update, Just: </span>
+  <ul>
+    <li>make sure you have enough storage</li>
+    <li>delete GD (main version)</li>
+    <li>install APK</li>
+  </ul>
+  <br><br><button onclick="clickLink('Geometry Dash 2.209.apk')">download</button>
+  
+  <hr>
+  
+  <h3>Geometry Dash 2.208 ZIP (PC / windows)</h3>
+  <span>The ZIP file for the 2.208 GD update, Just do what I said on the paper I gave you.</span>
+  <br><br><button disabled>coming soon...</button>
+     <script>
+   const errorMsg = document.getElementById("errorMsg");
+
+   function clickLink(link) {
+       try {
+           let linkEl = document.createElement("a");
+           linkEl.href = link;
+           // Extract filename or set download attribute
+           linkEl.download = link.split('/').pop(); 
+           
+           // Required for reliable triggers on mobile browsers
+           document.body.appendChild(linkEl);
+           linkEl.click();
+           document.body.removeChild(linkEl);
+       } catch (error) {
+           errorMsg.innerText = "Download failed: " + error.message;
+       }
+   }
+
+   function downAll() {
+       try {
+           // Currently only downloads the APK; 
+           // if adding more files later, stagger them with setTimeout to prevent browser blocking
+           clickLink("Geometry Dash 2.209.apk");
+       } catch (error) {
+           errorMsg.innerText = "Error in downAll: " + error.message;
+       }
+   }
+  </script>
+  </body>
+ </html>
