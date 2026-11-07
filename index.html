@@ -23,7 +23,7 @@
     <li>delete GD (main version)</li>
     <li>install APK</li>
   </ul>
-  <br><br><button onclick="clickLink('Geometry Dash 2.209.apk')">download</button>
+  <br><br><button onclick="clickLink('https://github.com/Anointo-1/Anointo-s-Archive/releases/download/v2.209/Geometry-Dash-2.209.apk')">download</button>
   
   <hr>
   
@@ -39,7 +39,7 @@
            linkEl.href = link;
            // Extract filename or set download attribute
            linkEl.download = link.split('/').pop(); 
-           
+           //linkEl.download = "geometrydash.apk"; 
            // Required for reliable triggers on mobile browsers
            document.body.appendChild(linkEl);
            linkEl.click();
@@ -53,7 +53,7 @@
        try {
            // Currently only downloads the APK; 
            // if adding more files later, stagger them with setTimeout to prevent browser blocking
-           clickLink("Geometry Dash 2.209.apk");
+           clickLink("https://github.com/Anointo-1/Anointo-s-Archive/releases/download/v2.209/Geometry-Dash-2.209.apk");
        } catch (error) {
            errorMsg.innerText = "Error in downAll: " + error.message;
        }
